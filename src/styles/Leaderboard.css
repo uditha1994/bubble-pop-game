@@ -1,0 +1,188 @@
+.leaderboard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.leaderboard h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.save-score-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.save-score-section p {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.name-input-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.name-input-section input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.name-input-section input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.name-input-section input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
+
+.name-input-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.name-input-buttons .btn {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.scores-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.no-scores {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+.score-entry {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.score-entry:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.score-entry:first-child {
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(255, 193, 7, 0.3));
+    border-color: rgba(255, 215, 0, 0.5);
+}
+
+.score-entry:nth-child(2) {
+    background: linear-gradient(45deg, rgba(192, 192, 192, 0.3), rgba(169, 169, 169, 0.3));
+    border-color: rgba(192, 192, 192, 0.5);
+}
+
+.score-entry:nth-child(3) {
+    background: linear-gradient(45deg, rgba(205, 127, 50, 0.3), rgba(184, 115, 51, 0.3));
+    border-color: rgba(205, 127, 50, 0.5);
+}
+
+.rank {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: 15px;
+    min-width: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.name {
+    color: white;
+    font-weight: 500;
+    flex: 1;
+    margin-right: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.score {
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar */
+.scores-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scores-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.scores-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.scores-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .leaderboard {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .score-entry {
+        padding: 12px;
+    }
+
+    .rank,
+    .score {
+        font-size: 14px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+}

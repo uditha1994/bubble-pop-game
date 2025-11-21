@@ -1,0 +1,81 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.game-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg,
+            rgba(135, 206, 250, 0.3) 0%,
+            rgba(70, 130, 180, 0.3) 50%,
+            rgba(25, 25, 112, 0.3) 100%);
+}
+
+.background-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #ff6b6b, #ee5a24);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #4ecdc4, #44a08d);
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.orb-3 {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #a8edea, #fed6e3);
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-20px) rotate(120deg);
+    }
+
+    66% {
+        transform: translateY(10px) rotate(240deg);
+    }
+}

@@ -1,0 +1,236 @@
+.game-ui {
+    position: relative;
+    z-index: 100;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.score-section {
+    display: flex;
+    gap: 30px;
+}
+
+.score,
+.level,
+.timer {
+    text-align: center;
+}
+
+.score .label,
+.level .label,
+.timer .label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.score .value,
+.level .value,
+.timer .value {
+    display: block;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(238, 90, 36, 0.6);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    color: white;
+    box-shadow: 0 4px 15px rgba(68, 160, 141, 0.4);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(68, 160, 141, 0.6);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.combo-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+    pointer-events: none;
+}
+
+.combo-text {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: comboAnimation 1s ease-out;
+}
+
+@keyframes comboAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.welcome-screen,
+.pause-screen,
+.game-over-screen {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+.welcome-screen h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-screen p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.instructions {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.instructions li {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.pause-screen h2,
+.game-over-screen h2 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pause-screen p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+}
+
+.final-score,
+.final-level {
+    margin-bottom: 15px;
+}
+
+.final-score span,
+.final-level span {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .score-section {
+        gap: 20px;
+    }
+
+    .score .value,
+    .level .value,
+    .timer .value {
+        font-size: 20px;
+    }
+
+    .welcome-screen h1 {
+        font-size: 28px;
+    }
+
+    .combo-text {
+        font-size: 36px;
+    }
+}
